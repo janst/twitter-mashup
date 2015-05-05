@@ -21,7 +21,8 @@ public class RestfulSearchForKeywordRoute extends RouteBuilder {
 		 .setHeader("CamelTwitterKeywords", header("query"))
 		 
 		 .to("twitter://search?type=POLLING" + 
-				 "&consumerKey=" + CONSUMER_KEY + " &consumerSecret=" + CONSUMER_SECRET +
+				 "&consumerKey=" + CONSUMER_KEY + 
+				 "&consumerSecret=" + CONSUMER_SECRET +
 				 "&accessToken=" + ACCESS_TOKEN +
 				 "&accessTokenSecret=" + ACCESS_TOKEN_SECRET)
 		.log("Body: ${body.toString}");
